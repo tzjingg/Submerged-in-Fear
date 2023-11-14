@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://bm46idtelcvra"]
+
+[ext_resource type="Script" path="res://scene/enemy/vacuum_ai.gd" id="1_3yd1p"]
+[ext_resource type="PackedScene" uid="uid://wtdhd4wf2vdq" path="res://scene/enemy/vacuum_cleaner.tscn" id="1_hbhrt"]
+[ext_resource type="Shader" path="res://scene/enemy/vaccum.gdshader" id="3_v3y0h"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cja1d"]
+shader = ExtResource("3_v3y0h")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x1o8u"]
+size = Vector2(69, 8)
+
+[node name="vacuum_ai" type="CharacterBody2D"]
+script = ExtResource("1_3yd1p")
+
+[node name="vacuum" parent="." instance=ExtResource("1_hbhrt")]
+material = SubResource("ShaderMaterial_cja1d")
+position = Vector2(0, 0)
+animation = &"move"
+autoplay = "move"
+frame_progress = 0.999923
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(-34, -7)
+rotation = 1.5708
+scale = Vector2(-12.4723, 1.54056)
+target_position = Vector2(-1.88547e-07, 9.5268)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3.5, 26)
+shape = SubResource("RectangleShape2D_x1o8u")

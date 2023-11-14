@@ -1,0 +1,150 @@
+[gd_scene load_steps=20 format=3 uid="uid://col2mcprvqhfj"]
+
+[ext_resource type="Script" path="res://scene/player/health_bar.gd" id="1_hdikk"]
+[ext_resource type="Script" path="res://script/player.gd" id="2_qbdpy"]
+[ext_resource type="Texture2D" uid="uid://c21kapk4buqtw" path="res://texture/player.png" id="3_qrlke"]
+[ext_resource type="PackedScene" uid="uid://c7fp4m80mx2yk" path="res://scene/props/key_arrow.tscn" id="4_ep30u"]
+[ext_resource type="Texture2D" uid="uid://ce3p6ojv18car" path="res://texture/shieldWhite_Edit.png" id="5_hpuvk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ffb8l"]
+atlas = ExtResource("3_qrlke")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xx8ap"]
+atlas = ExtResource("3_qrlke")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ldw10"]
+atlas = ExtResource("3_qrlke")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pfayn"]
+atlas = ExtResource("3_qrlke")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7s4td"]
+atlas = ExtResource("3_qrlke")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ngsqa"]
+atlas = ExtResource("3_qrlke")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8gjdf"]
+atlas = ExtResource("3_qrlke")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2x67u"]
+atlas = ExtResource("3_qrlke")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwpuo"]
+atlas = ExtResource("3_qrlke")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ktinq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ffb8l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xx8ap")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ldw10")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pfayn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7s4td")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ngsqa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8gjdf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2x67u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwpuo")
+}],
+"loop": false,
+"name": &"blink",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fv4ld"]
+size = Vector2(94.9555, 94.9555)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eexte"]
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4tayy"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8, 0.8, 0.8, 0)
+
+[sub_resource type="Theme" id="Theme_yl27y"]
+ProgressBar/styles/background = SubResource("StyleBoxFlat_eexte")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_4tayy")
+
+[node name="Player" type="Node2D" groups=["player"]]
+show_behind_parent = true
+script = ExtResource("1_hdikk")
+
+[node name="player" type="CharacterBody2D" parent="." groups=["players"]]
+top_level = true
+script = ExtResource("2_qbdpy")
+
+[node name="Player" type="AnimatedSprite2D" parent="player"]
+sprite_frames = SubResource("SpriteFrames_ktinq")
+animation = &"blink"
+frame = 8
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+visible = false
+position = Vector2(0, -4.76837e-07)
+scale = Vector2(0.337, 0.337)
+shape = SubResource("RectangleShape2D_fv4ld")
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+
+[node name="dash_timer" type="Timer" parent="player"]
+
+[node name="key_arrow" parent="player" instance=ExtResource("4_ep30u")]
+position = Vector2(0, 0)
+scale = Vector2(0.114706, 0.114706)
+
+[node name="shield_timer" type="Timer" parent="player"]
+one_shot = true
+
+[node name="shield" type="Sprite2D" parent="player"]
+position = Vector2(4.76837e-07, -4.76837e-07)
+scale = Vector2(0.12545, 0.12545)
+texture = ExtResource("5_hpuvk")
+
+[node name="hud" type="CanvasLayer" parent="."]
+
+[node name="health_bar" type="ProgressBar" parent="hud"]
+offset_left = 531.0
+offset_top = 274.0
+offset_right = 617.0
+offset_bottom = 290.0
+theme = SubResource("Theme_yl27y")
+value = 100.0
+show_percentage = false
+
+[connection signal="trampoline_jump" from="." to="player" method="_on_player_trampoline_jump"]
+[connection signal="timeout" from="player/shield_timer" to="." method="_on_shield_timer_timeout"]

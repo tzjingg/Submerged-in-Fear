@@ -1,0 +1,46 @@
+[gd_scene load_steps=4 format=3 uid="uid://jkowsk5mwud"]
+
+[ext_resource type="Script" path="res://scene/props/crt.gd" id="1_8il32"]
+[ext_resource type="Shader" path="res://crt.gdshader" id="1_v8sav"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jbi7q"]
+shader = ExtResource("1_v8sav")
+shader_parameter/overlay = false
+shader_parameter/scanlines_opacity = 0.0
+shader_parameter/scanlines_width = 0.25
+shader_parameter/grille_opacity = 0.3
+shader_parameter/resolution = Vector2(640, 480)
+shader_parameter/pixelate = false
+shader_parameter/roll = true
+shader_parameter/roll_speed = 3.0
+shader_parameter/roll_size = 6.294
+shader_parameter/roll_variation = 1.8
+shader_parameter/distort_intensity = 0.003
+shader_parameter/noise_opacity = 0.0
+shader_parameter/noise_speed = 5.0
+shader_parameter/static_noise_intensity = 0.06
+shader_parameter/aberration = 0.02
+shader_parameter/brightness = 1.4
+shader_parameter/discolor = true
+shader_parameter/warp_amount = 0.0
+shader_parameter/clip_warp = false
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 1.0
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8il32")
+
+[node name="crt effect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_jbi7q")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://kfwh1pokunkh"]
+
+[ext_resource type="Script" path="res://scene/enemy/smile.gd" id="1_3uylp"]
+[ext_resource type="Texture2D" uid="uid://cm0fhasgvlvw0" path="res://texture/Drawing (1).png" id="1_iucmd"]
+[ext_resource type="Shader" path="res://scene/enemy/vaccum.gdshader" id="2_bvuu8"]
+[ext_resource type="PackedScene" uid="uid://jv3vh71back8" path="res://scene/enemy/laser.tscn" id="3_ner1p"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_07wgl"]
+shader = ExtResource("2_bvuu8")
+
+[node name="smile" type="CharacterBody2D"]
+script = ExtResource("1_3uylp")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_07wgl")
+scale = Vector2(0.31, 0.31)
+texture = ExtResource("1_iucmd")
+region_enabled = true
+region_rect = Rect2(512, 160, 704, 480)
+
+[node name="laser" parent="." instance=ExtResource("3_ner1p")]
+position = Vector2(41, -32)
+
+[node name="laser2" parent="." instance=ExtResource("3_ner1p")]
+position = Vector2(-32, -32)

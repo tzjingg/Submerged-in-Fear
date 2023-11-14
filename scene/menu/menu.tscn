@@ -1,0 +1,126 @@
+[gd_scene load_steps=9 format=3 uid="uid://dkx8d7qcq6fi4"]
+
+[ext_resource type="Script" path="res://scene/menu/menu.gd" id="1_lir3p"]
+[ext_resource type="FontFile" uid="uid://bf4fn1tt20txf" path="res://font/Sora-VariableFont_wght.ttf" id="2_sc311"]
+[ext_resource type="Texture2D" uid="uid://uni01b6vcbhr" path="res://texture/game1.png" id="3_27lvj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0a5eq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j6e2d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_828b6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dioym"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cbbfd"]
+
+[node name="menu" type="CanvasLayer"]
+script = ExtResource("1_lir3p")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 80
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/MarginContainer"]
+layout_mode = 2
+
+[node name="gametitle" type="Label" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("2_sc311")
+theme_override_font_sizes/font_size = 62
+text = "Submerged in Fear"
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+
+[node name="startbtn" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_pressed_color = Color(0.27451, 0.27451, 0.27451, 1)
+theme_override_colors/font_hover_color = Color(0.470588, 0.470588, 0.470588, 1)
+theme_override_fonts/font = ExtResource("2_sc311")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0a5eq")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_j6e2d")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_828b6")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_dioym")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cbbfd")
+text = "Start Game"
+
+[node name="instructionsbtn" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_pressed_color = Color(0.27451, 0.27451, 0.27451, 1)
+theme_override_colors/font_hover_color = Color(0.470588, 0.470588, 0.470588, 1)
+theme_override_fonts/font = ExtResource("2_sc311")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0a5eq")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_j6e2d")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_828b6")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_dioym")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cbbfd")
+text = "Instructions"
+
+[node name="quitbtn" type="Button" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_pressed_color = Color(0.27451, 0.27451, 0.27451, 1)
+theme_override_colors/font_hover_color = Color(0.470588, 0.470588, 0.470588, 1)
+theme_override_fonts/font = ExtResource("2_sc311")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_0a5eq")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_j6e2d")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_828b6")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_dioym")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_cbbfd")
+text = "Quit"
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 160)
+layout_mode = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="Control/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_sc311")
+text = "by Tan Zi Jing and Ng Jan Hao
+© 2023 Masters Inc. All rights reserved"
+horizontal_alignment = 1
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+
+[node name="bg_music" type="AudioStreamPlayer" parent="."]
+
+[node name="Game1" type="Sprite2D" parent="."]
+position = Vector2(368, 48)
+texture = ExtResource("3_27lvj")
+region_enabled = true
+region_rect = Rect2(320, 128, 704, 256)
+
+[connection signal="button_down" from="Control/MarginContainer/VBoxContainer/startbtn" to="." method="_on_startbtn_button_down"]
+[connection signal="mouse_entered" from="Control/MarginContainer/VBoxContainer/startbtn" to="." method="_on_startbtn_mouse_entered"]
+[connection signal="button_down" from="Control/MarginContainer/VBoxContainer/instructionsbtn" to="." method="_on_instructionsbtn_button_down"]
+[connection signal="mouse_entered" from="Control/MarginContainer/VBoxContainer/instructionsbtn" to="." method="_on_instructionsbtn_mouse_entered"]
+[connection signal="button_down" from="Control/MarginContainer/VBoxContainer/quitbtn" to="." method="_on_quitbtn_button_down"]
+[connection signal="mouse_entered" from="Control/MarginContainer/VBoxContainer/quitbtn" to="." method="_on_quitbtn_mouse_entered"]

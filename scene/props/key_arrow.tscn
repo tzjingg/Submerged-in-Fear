@@ -1,0 +1,22 @@
+[gd_scene load_steps=6 format=3 uid="uid://c7fp4m80mx2yk"]
+
+[ext_resource type="Shader" path="res://scene/enemy/vaccum.gdshader" id="1_dasad"]
+[ext_resource type="Texture2D" uid="uid://dtvpde5tmknap" path="res://texture/ef4880d3-fba7-4824-a9e7-4417cdebd002.sketchpad.png" id="2_imb3q"]
+[ext_resource type="Script" path="res://scene/props/key_arrow.gd" id="3_34j32"]
+[ext_resource type="Texture2D" uid="uid://dyfksmrhp8660" path="res://texture/image-removebg-preview (3).png" id="4_x02d6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dm13f"]
+shader = ExtResource("1_dasad")
+
+[node name="Sprite2D" type="Sprite2D"]
+position = Vector2(0, -504)
+scale = Vector2(0.452941, 0.452941)
+texture = ExtResource("2_imb3q")
+region_enabled = true
+region_rect = Rect2(-1664, 256, 2688, 256)
+script = ExtResource("3_34j32")
+
+[node name="Image-removebg-preview(3)" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_dm13f")
+position = Vector2(1077.4, 17.6624)
+texture = ExtResource("4_x02d6")

@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bybwlposuymxo"]
+
+[ext_resource type="Script" path="res://script/voidarea.gd" id="1_a1mp4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bd27x"]
+size = Vector2(76568, 392)
+
+[node name="void" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_a1mp4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(52, 172)
+shape = SubResource("RectangleShape2D_bd27x")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

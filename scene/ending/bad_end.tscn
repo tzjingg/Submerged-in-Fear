@@ -1,0 +1,191 @@
+[gd_scene load_steps=19 format=3 uid="uid://cd52nqtcghmwe"]
+
+[ext_resource type="Script" path="res://scene/ending/bad_end.gd" id="1_f73an"]
+[ext_resource type="Texture2D" uid="uid://bhpyn8j7crkg4" path="res://texture/title.png" id="1_iqm2j"]
+[ext_resource type="Script" path="res://script/player.gd" id="2_fi3hh"]
+[ext_resource type="Texture2D" uid="uid://dyfksmrhp8660" path="res://texture/image-removebg-preview (3).png" id="3_2rtu1"]
+[ext_resource type="Script" path="res://script/objecttrail.gd" id="4_e1fx7"]
+[ext_resource type="Texture2D" uid="uid://dcbi2wr8w45s0" path="res://texture/colourful.png" id="6_xhldj"]
+[ext_resource type="PackedScene" uid="uid://css8d137tfg26" path="res://scene/map/end_door.tscn" id="7_xsyun"]
+[ext_resource type="Texture2D" uid="uid://cl1m26j1jgpak" path="res://texture/credits.png" id="8_14ipj"]
+[ext_resource type="FontFile" uid="uid://ttjwwf1jr0u7" path="res://font/arlrdbd.ttf" id="8_c6l42"]
+[ext_resource type="Texture2D" uid="uid://583hl0jos1uu" path="res://texture/main scene.png" id="9_fvxno"]
+[ext_resource type="Texture2D" uid="uid://dhxrnwnuk7hj4" path="res://texture/image-removebg-preview (9).png" id="9_pkmb6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hg7yp"]
+size = Vector2(59.3472, 59.3472)
+
+[sub_resource type="Curve" id="Curve_lfmcs"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_oeosk"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_846gm"]
+bg_color = Color(1, 1, 0.709804, 1)
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 1, 0.709804, 0.627451)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dwb68"]
+bg_color = Color(1, 1, 1, 1)
+border_width_right = 3
+border_width_bottom = 3
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="Theme" id="Theme_b86rt"]
+default_font = ExtResource("8_c6l42")
+Button/styles/hover = SubResource("StyleBoxFlat_846gm")
+Button/styles/normal = SubResource("StyleBoxFlat_dwb68")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pksk6"]
+load_path = "res://.godot/imported/image-removebg-preview (10).png-f7ab428a64760886b6bce265af57a150.ctex"
+
+[node name="bad_end" type="Node2D"]
+script = ExtResource("1_f73an")
+
+[node name="Title" type="Sprite2D" parent="."]
+position = Vector2(-15.9999, -613)
+scale = Vector2(0.800772, 0.800772)
+texture = ExtResource("1_iqm2j")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -1512.0
+offset_top = -552.0
+offset_right = -1472.0
+offset_bottom = -512.0
+scale = Vector2(65.8722, 9.26206)
+color = Color(0, 0, 0, 1)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-584, 560)
+polygon = PackedVector2Array(-88, -552, 1216, -552, 1216, -1072, -40, -1128, 1280, -1128, 1280, -496, -144, -496, -144, -1128, -40, -1128, -88, -1064, -40, -1064, -88, -1064)
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D/CollisionPolygon2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -253)
+
+[node name="player" type="CharacterBody2D" parent="."]
+position = Vector2(0, -7.99997)
+script = ExtResource("2_fi3hh")
+
+[node name="Player" type="Sprite2D" parent="player"]
+scale = Vector2(0.09, 0.09)
+texture = ExtResource("3_2rtu1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+position = Vector2(-5.96046e-08, 0)
+scale = Vector2(0.337, 0.337)
+shape = SubResource("RectangleShape2D_hg7yp")
+
+[node name="trail" type="Line2D" parent="player"]
+top_level = true
+width = 20.0
+width_curve = SubResource("Curve_lfmcs")
+default_color = Color(0, 0, 0, 1)
+gradient = SubResource("Gradient_oeosk")
+script = ExtResource("4_e1fx7")
+MAX_LENGTH = 30
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D2"]
+position = Vector2(-584, 560)
+polygon = PackedVector2Array(-40, -1128, -88, -1064, 1216, -1072)
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D2/CollisionPolygon2D"]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -200.0
+offset_top = -696.0
+offset_right = -8.0
+offset_bottom = -645.0
+scale = Vector2(2.99082, 2.99082)
+bbcode_enabled = true
+text = "
+[center][rainbow][wave amp=100 freq=10]done[/wave][/rainbow][/center]"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+offset_left = 24.0
+offset_top = -400.0
+offset_right = 216.0
+offset_bottom = -360.0
+scale = Vector2(2.99082, 2.99082)
+bbcode_enabled = true
+text = "[center][rainbow][wave amp=50 freq=10]find the secret ending!!![/wave][/rainbow][/center]"
+
+[node name="Colourful" type="Sprite2D" parent="."]
+position = Vector2(-16, 152)
+scale = Vector2(1.59402, 1.59402)
+texture = ExtResource("6_xhldj")
+
+[node name="end_door" parent="." instance=ExtResource("7_xsyun")]
+position = Vector2(584, -27)
+scale = Vector2(1.12319, 1.12319)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -544.0
+offset_top = -456.0
+offset_right = -432.0
+offset_bottom = -351.0
+grow_vertical = 0
+scale = Vector2(3.25083, 3.25083)
+
+[node name="play" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_b86rt")
+text = " "
+icon = SubResource("CompressedTexture2D_pksk6")
+icon_alignment = 1
+expand_icon = true
+
+[node name="main scene" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_b86rt")
+text = " "
+icon = ExtResource("9_fvxno")
+icon_alignment = 1
+expand_icon = true
+
+[node name="quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_b86rt")
+text = " "
+icon = ExtResource("9_pkmb6")
+icon_alignment = 1
+expand_icon = true
+
+[node name="credits" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_b86rt")
+text = " "
+icon = ExtResource("8_14ipj")
+icon_alignment = 1
+expand_icon = true
+
+[connection signal="mouse_entered" from="VBoxContainer/play" to="." method="_on_play_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/play" to="." method="_on_play_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/play" to="." method="_on_play_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/main scene" to="." method="_on_main_scene_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/main scene" to="." method="_on_main_scene_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/main scene" to="." method="_on_main_scene_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/quit" to="." method="_on_quit_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/quit" to="." method="_on_quit_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/quit" to="." method="_on_quit_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/credits" to="." method="_on_credits_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/credits" to="." method="_on_credits_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/credits" to="." method="_on_credits_pressed"]

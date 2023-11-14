@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://c7ch5n1p12m1m"]
+
+[ext_resource type="Texture2D" uid="uid://bqe44xwht1k4d" path="res://texture/pixil-frame-0 (14).png" id="1_d6mqr"]
+[ext_resource type="Script" path="res://scene/props/lock.gd" id="2_0vmqu"]
+[ext_resource type="Texture2D" uid="uid://wnehhw8wot8y" path="res://texture/pixil-frame-0 (15).png" id="3_g7fn0"]
+[ext_resource type="Texture2D" uid="uid://cenf2vs6cdwsg" path="res://texture/pixil-frame-0 (16).png" id="4_eq43w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ftwbs"]
+size = Vector2(64, 64)
+
+[node name="lock" type="Sprite2D"]
+texture = ExtResource("1_d6mqr")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 64)
+script = ExtResource("2_0vmqu")
+
+[node name="e" type="Sprite2D" parent="."]
+position = Vector2(50, 32)
+texture = ExtResource("3_g7fn0")
+
+[node name="lock" type="Sprite2D" parent="."]
+position = Vector2(50, 32)
+texture = ExtResource("4_eq43w")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("RectangleShape2D_ftwbs")
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+
+[connection signal="finished" from="music" to="." method="_on_music_finished"]

@@ -1,0 +1,237 @@
+[gd_scene load_steps=12 format=3 uid="uid://b4c3nru1bm7f"]
+
+[ext_resource type="Script" path="res://scene/ending/cage.gd" id="1_yjd72"]
+[ext_resource type="Shader" path="res://scene/enemy/vaccum.gdshader" id="2_kp55u"]
+[ext_resource type="Texture2D" uid="uid://1yptpfqprvw1" path="res://texture/cage.png" id="3_4rsix"]
+[ext_resource type="PackedScene" uid="uid://col2mcprvqhfj" path="res://scene/player/Player.tscn" id="4_cgwyh"]
+[ext_resource type="Texture2D" uid="uid://cvkru7j1iu6hu" path="res://texture/ef4880d3-fba7-4824-a9e7-4417cdebd002.sketchpad (2).png" id="5_33hkq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_23snt"]
+size = Vector2(30.4615, 7.23077)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_elddn"]
+size = Vector2(14.5, 23.8462)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fp2m1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ics3i"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hnxau"]
+shader = ExtResource("2_kp55u")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t0i8x"]
+shader = ExtResource("2_kp55u")
+
+[node name="cage" type="Node2D"]
+script = ExtResource("1_yjd72")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-4, 26.4444)
+scale = Vector2(2.88889, 2.88889)
+shape = SubResource("RectangleShape2D_23snt")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(36.9444, 2.44444)
+scale = Vector2(2.88889, 2.88889)
+shape = SubResource("RectangleShape2D_elddn")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-8, -45)
+scale = Vector2(2.88889, 2.88889)
+shape = SubResource("RectangleShape2D_fp2m1")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-46, 0)
+scale = Vector2(2.88889, 2.88889)
+shape = SubResource("RectangleShape2D_ics3i")
+
+[node name="Cage" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_hnxau")
+position = Vector2(29, 8)
+scale = Vector2(2.88889, 2.88889)
+texture = ExtResource("3_4rsix")
+
+[node name="Player" parent="." instance=ExtResource("4_cgwyh")]
+position = Vector2(0, 8)
+
+[node name="smile" type="Node2D" parent="."]
+
+[node name="Ef4880d3-fba7-4824-a9e7-4417Cdebd002_sketchpad(2)" type="Sprite2D" parent="smile"]
+material = SubResource("ShaderMaterial_t0i8x")
+position = Vector2(967.38, -138.25)
+scale = Vector2(0.432232, 0.432232)
+texture = ExtResource("5_33hkq")
+
+[node name="Ef4880d3-fba7-4824-a9e7-4417Cdebd002_sketchpad(2)2" type="Sprite2D" parent="smile"]
+material = SubResource("ShaderMaterial_t0i8x")
+position = Vector2(552, -536)
+scale = Vector2(0.432232, 0.432232)
+texture = ExtResource("5_33hkq")
+
+[node name="Ef4880d3-fba7-4824-a9e7-4417Cdebd002_sketchpad(2)3" type="Sprite2D" parent="smile"]
+material = SubResource("ShaderMaterial_t0i8x")
+position = Vector2(96, -536)
+scale = Vector2(0.432232, 0.432232)
+texture = ExtResource("5_33hkq")
+
+[node name="Ef4880d3-fba7-4824-a9e7-4417Cdebd002_sketchpad(2)4" type="Sprite2D" parent="smile"]
+material = SubResource("ShaderMaterial_t0i8x")
+position = Vector2(-376, -512)
+scale = Vector2(0.432232, 0.432232)
+texture = ExtResource("5_33hkq")
+
+[node name="Ef4880d3-fba7-4824-a9e7-4417Cdebd002_sketchpad(2)11" type="Sprite2D" parent="smile"]
+material = SubResource("ShaderMaterial_t0i8x")
+position = Vector2(-400, -840)
+scale = Vector2(0.432232, 0.432232)
+texture = ExtResource("5_33hkq")
+
+[node name="Ef4880d3-fba7-4824-a9e7-4417Cdebd002_sketchpad(2)12" type="Sprite2D" parent="smile"]
+material = SubResource("ShaderMaterial_t0i8x")
+position = Vector2(64.0001, -848)
+scale = Vector2(0.432232, 0.432232)
+texture = ExtResource("5_33hkq")
+
+[node name="Ef4880d3-fba7-4824-a9e7-4417Cdebd002_sketchpad(2)13" type="Sprite2D" parent="smile"]
+material = SubResource("ShaderMaterial_t0i8x")
+position = Vector2(504, -856)
+scale = Vector2(0.432232, 0.432232)
+texture = ExtResource("5_33hkq")
+
+[node name="Ef4880d3-fba7-4824-a9e7-4417Cdebd002_sketchpad(2)14" type="Sprite2D" parent="smile"]
+material = SubResource("ShaderMaterial_t0i8x")
+position = Vector2(968, -496)
+scale = Vector2(0.432232, 0.432232)
+texture = ExtResource("5_33hkq")
+
+[node name="Ef4880d3-fba7-4824-a9e7-4417Cdebd002_sketchpad(2)15" type="Sprite2D" parent="smile"]
+material = SubResource("ShaderMaterial_t0i8x")
+position = Vector2(928, -848)
+scale = Vector2(0.432232, 0.432232)
+texture = ExtResource("5_33hkq")
+
+[node name="Ef4880d3-fba7-4824-a9e7-4417Cdebd002_sketchpad(2)16" type="Sprite2D" parent="smile"]
+material = SubResource("ShaderMaterial_t0i8x")
+position = Vector2(1320, -832)
+scale = Vector2(0.432232, 0.432232)
+texture = ExtResource("5_33hkq")
+
+[node name="Ef4880d3-fba7-4824-a9e7-4417Cdebd002_sketchpad(2)17" type="Sprite2D" parent="smile"]
+material = SubResource("ShaderMaterial_t0i8x")
+position = Vector2(1336, -512)
+scale = Vector2(0.432232, 0.432232)
+texture = ExtResource("5_33hkq")
+
+[node name="Ef4880d3-fba7-4824-a9e7-4417Cdebd002_sketchpad(2)18" type="Sprite2D" parent="smile"]
+material = SubResource("ShaderMaterial_t0i8x")
+position = Vector2(1360, -152)
+scale = Vector2(0.432232, 0.432232)
+texture = ExtResource("5_33hkq")
+
+[node name="Ef4880d3-fba7-4824-a9e7-4417Cdebd002_sketchpad(2)19" type="Sprite2D" parent="smile"]
+material = SubResource("ShaderMaterial_t0i8x")
+position = Vector2(1360, 208)
+scale = Vector2(0.432232, 0.432232)
+texture = ExtResource("5_33hkq")
+
+[node name="Ef4880d3-fba7-4824-a9e7-4417Cdebd002_sketchpad(2)20" type="Sprite2D" parent="smile"]
+material = SubResource("ShaderMaterial_t0i8x")
+position = Vector2(1392, 592)
+scale = Vector2(0.432232, 0.432232)
+texture = ExtResource("5_33hkq")
+
+[node name="Ef4880d3-fba7-4824-a9e7-4417Cdebd002_sketchpad(2)21" type="Sprite2D" parent="smile"]
+material = SubResource("ShaderMaterial_t0i8x")
+position = Vector2(952, 584)
+scale = Vector2(0.432232, 0.432232)
+texture = ExtResource("5_33hkq")
+
+[node name="Ef4880d3-fba7-4824-a9e7-4417Cdebd002_sketchpad(2)22" type="Sprite2D" parent="smile"]
+material = SubResource("ShaderMaterial_t0i8x")
+position = Vector2(-760, 528)
+scale = Vector2(0.432232, 0.432232)
+texture = ExtResource("5_33hkq")
+
+[node name="Ef4880d3-fba7-4824-a9e7-4417Cdebd002_sketchpad(2)23" type="Sprite2D" parent="smile"]
+material = SubResource("ShaderMaterial_t0i8x")
+position = Vector2(-832, -560)
+scale = Vector2(0.432232, 0.432232)
+texture = ExtResource("5_33hkq")
+
+[node name="Ef4880d3-fba7-4824-a9e7-4417Cdebd002_sketchpad(2)24" type="Sprite2D" parent="smile"]
+material = SubResource("ShaderMaterial_t0i8x")
+position = Vector2(-824, -872)
+scale = Vector2(0.432232, 0.432232)
+texture = ExtResource("5_33hkq")
+
+[node name="Ef4880d3-fba7-4824-a9e7-4417Cdebd002_sketchpad(2)25" type="Sprite2D" parent="smile"]
+material = SubResource("ShaderMaterial_t0i8x")
+position = Vector2(-1168, -896)
+scale = Vector2(0.432232, 0.432232)
+texture = ExtResource("5_33hkq")
+
+[node name="Ef4880d3-fba7-4824-a9e7-4417Cdebd002_sketchpad(2)26" type="Sprite2D" parent="smile"]
+material = SubResource("ShaderMaterial_t0i8x")
+position = Vector2(-1184, -576)
+scale = Vector2(0.432232, 0.432232)
+texture = ExtResource("5_33hkq")
+
+[node name="Ef4880d3-fba7-4824-a9e7-4417Cdebd002_sketchpad(2)27" type="Sprite2D" parent="smile"]
+material = SubResource("ShaderMaterial_t0i8x")
+position = Vector2(-1192, -248)
+scale = Vector2(0.432232, 0.432232)
+texture = ExtResource("5_33hkq")
+
+[node name="Ef4880d3-fba7-4824-a9e7-4417Cdebd002_sketchpad(2)28" type="Sprite2D" parent="smile"]
+material = SubResource("ShaderMaterial_t0i8x")
+position = Vector2(-1160, 152)
+scale = Vector2(0.432232, 0.432232)
+texture = ExtResource("5_33hkq")
+
+[node name="Ef4880d3-fba7-4824-a9e7-4417Cdebd002_sketchpad(2)29" type="Sprite2D" parent="smile"]
+material = SubResource("ShaderMaterial_t0i8x")
+position = Vector2(-1168, 512)
+scale = Vector2(0.432232, 0.432232)
+texture = ExtResource("5_33hkq")
+
+[node name="Ef4880d3-fba7-4824-a9e7-4417Cdebd002_sketchpad(2)5" type="Sprite2D" parent="smile"]
+material = SubResource("ShaderMaterial_t0i8x")
+position = Vector2(-792, -224)
+scale = Vector2(0.432232, 0.432232)
+texture = ExtResource("5_33hkq")
+
+[node name="Ef4880d3-fba7-4824-a9e7-4417Cdebd002_sketchpad(2)6" type="Sprite2D" parent="smile"]
+material = SubResource("ShaderMaterial_t0i8x")
+position = Vector2(-800, 160)
+scale = Vector2(0.432232, 0.432232)
+texture = ExtResource("5_33hkq")
+
+[node name="Ef4880d3-fba7-4824-a9e7-4417Cdebd002_sketchpad(2)7" type="Sprite2D" parent="smile"]
+material = SubResource("ShaderMaterial_t0i8x")
+position = Vector2(-400, 504)
+scale = Vector2(0.432232, 0.432232)
+texture = ExtResource("5_33hkq")
+
+[node name="Ef4880d3-fba7-4824-a9e7-4417Cdebd002_sketchpad(2)8" type="Sprite2D" parent="smile"]
+material = SubResource("ShaderMaterial_t0i8x")
+position = Vector2(64.0001, 512)
+scale = Vector2(0.432232, 0.432232)
+texture = ExtResource("5_33hkq")
+
+[node name="Ef4880d3-fba7-4824-a9e7-4417Cdebd002_sketchpad(2)9" type="Sprite2D" parent="smile"]
+material = SubResource("ShaderMaterial_t0i8x")
+position = Vector2(528, 512)
+scale = Vector2(0.432232, 0.432232)
+texture = ExtResource("5_33hkq")
+
+[node name="Ef4880d3-fba7-4824-a9e7-4417Cdebd002_sketchpad(2)10" type="Sprite2D" parent="smile"]
+material = SubResource("ShaderMaterial_t0i8x")
+position = Vector2(976, 256)
+scale = Vector2(0.432232, 0.432232)
+texture = ExtResource("5_33hkq")
+
+[node name="music" type="AudioStreamPlayer" parent="."]
+
+[editable path="Player"]

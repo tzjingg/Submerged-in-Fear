@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://6lojrxdwriyh"]
+
+[ext_resource type="FontFile" uid="uid://dtpdys7wweybr" path="res://font/sewer.ttf" id="1_dqop3"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -216.0
+offset_top = 248.0
+offset_right = 536.0
+offset_bottom = 288.0
+scale = Vector2(3.12327, 3.12327)
+theme_override_fonts/normal_font = ExtResource("1_dqop3")
+bbcode_enabled = true
+text = "[wave freq=10][center]You died of boredom...[/center][/wave]"

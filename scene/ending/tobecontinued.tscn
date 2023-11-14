@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://4umak4kwvj8b"]
+
+[ext_resource type="Script" path="res://scene/ending/tobecontinued.gd" id="1_7mwnb"]
+[ext_resource type="FontFile" uid="uid://dcm1d7vi5phd4" path="res://font/VCR OSD Mono 400.ttf" id="2_v1asf"]
+
+[node name="tobecontinued" type="Node2D"]
+script = ExtResource("1_7mwnb")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("2_v1asf")
+theme_override_font_sizes/font_size = 80
+text = "To be continued..."
+
+[node name="Camera2D" type="Camera2D" parent="Label"]
+position = Vector2(424, 40)
+
+[node name="music" type="AudioStreamPlayer" parent="."]

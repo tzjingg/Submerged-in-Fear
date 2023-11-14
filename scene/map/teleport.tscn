@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cm2kt47ebgiqj"]
+
+[ext_resource type="Texture2D" uid="uid://cbrh1yqnv8q1u" path="res://texture/image-PhotoRoom.png-PhotoRoom.png" id="1_seghw"]
+
+[node name="teleport" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(5.5, 7.625)
+scale = Vector2(0.364286, 0.382597)
+texture = ExtResource("1_seghw")

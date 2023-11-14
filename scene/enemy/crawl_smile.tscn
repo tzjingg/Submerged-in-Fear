@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://cinsn42j8xl1o"]
+
+[ext_resource type="Shader" path="res://scene/enemy/vaccum.gdshader" id="1_jfjet"]
+[ext_resource type="Texture2D" uid="uid://cm0fhasgvlvw0" path="res://texture/Drawing (1).png" id="2_ttw7l"]
+[ext_resource type="Script" path="res://scene/enemy/crawl_smile.gd" id="3_v5lfq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a8ini"]
+shader = ExtResource("1_jfjet")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cvthw"]
+size = Vector2(701.725, 431.831)
+
+[node name="crawl_smile" type="Sprite2D"]
+material = SubResource("ShaderMaterial_a8ini")
+position = Vector2(8, 0)
+scale = Vector2(0.113966, 0.113966)
+texture = ExtResource("2_ttw7l")
+script = ExtResource("3_v5lfq")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-94.463, -20.2421)
+shape = SubResource("RectangleShape2D_cvthw")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
