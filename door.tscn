@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://b78h7gt8nrbwd"]
-
-[ext_resource type="Texture2D" uid="uid://cli7yxcfisf5m" path="res://texture/image (1).png" id="1_iavu7"]
-
-[node name="door" type="Sprite2D"]
-position = Vector2(-2.00001, -3)
-scale = Vector2(0.17075, 0.17075)
-texture = ExtResource("1_iavu7")
