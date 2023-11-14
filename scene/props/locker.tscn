@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cypl3k7lke1ho"]
-
-[ext_resource type="Texture2D" uid="uid://cdv3ffw2luyqg" path="res://texture/pixil-frame-0 (2).png" id="1_172qp"]
-
-[node name="locker" type="Sprite2D"]
-texture = ExtResource("1_172qp")
