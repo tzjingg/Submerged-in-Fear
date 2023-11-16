@@ -1,4 +1,5 @@
 # PLEASE KINDLY INFORM ME IF U FOUND BUGS
+# NO MOBILE SUPPORT
 # Submerged-in-Fear
 ## Description
 ![game](https://github.com/tzjingg/Submerged-in-Fear/assets/135602156/037eaaa2-e2ce-40e6-bf9b-85514d03d8f9)
