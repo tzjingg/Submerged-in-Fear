@@ -7,6 +7,12 @@
 
 This is a thrilling 2D game that will activate your **insanity**. Join a **colourless** world as colours fade away. A huge **lore** is hidden behind the game as you slowly uncover the _melancholic story_...
 
+## game trailer
+https://www.youtube.com/watch?v=kNFNi-Kf6H0&ab_channel=mysterious_mirage
+
+## game walkthrough
+https://youtu.be/qWbaIXkCPS8
+
 ## Genre
 - horror (not quite)
 
