@@ -3,7 +3,7 @@
 # NO MOBILE SUPPORT
 # Submerged-in-Fear
 ## Description
-![game](https://github.com/tzjingg/Submerged-in-Fear/assets/135602156/037eaaa2-e2ce-40e6-bf9b-85514d03d8f9)
+![image](https://github.com/tzjingg/Submerged-in-Fear/assets/135602156/660d7a2e-3748-4008-b1dd-4a3ef4da67e7)
 
 This is a thrilling 2D game that will activate your **insanity**. Join a **colourless** world as colours fade away. A huge **lore** is hidden behind the game as you slowly uncover the _melancholic story_...
 
